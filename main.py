@@ -41,18 +41,17 @@ if __name__ == "__main__":
 
     if methode_name == "zncc":methode = correlation.matching_point_zncc
     elif methode_name == "ssd":methode = correlation.matching_point_ssd
-    """
+    
     image1 = cv2.imread("./images/{}/illum{}/view1.png".format(image_name, illum), 0)
 
     for i in range(2, 3):
         image2 = cv2.imread("./images/{}/illum{}/view{}.png".format(image_name, illum, i), 0)
         disp = disparity(image1, image2, interval, dx, methode)
         image_depth = map(disp, disp.min(), disp.max(), 10, 255)
-        #cv2.imwrite("./result/{}/illum{}/{}/{}.jpg".format(image_name,illum, methode_name, i), image_depth)
-        cv2.imwrite("1.jpg", image_depth)
-    """
-    image1 = cv2.resize(cv2.imread("images/art/illum1/view0.png", 0), (round(278*coeff), round(222*coeff)))
-    image2 = cv2.resize(cv2.imread("images/art/illum1/view2.png", 0), (round(278*coeff), round(222*coeff)))
-    disp = occulation(image1, image2, interval, dx, methode)
+        cv2.imwrite("./result/{}/illum{}/{}/{}.jpg".format(image_name,illum, methode_name, i), image_depth)
+
+    #image1 = cv2.resize(cv2.imread("images/art/illum1/view0.png", 0), (round(278*coeff), round(222*coeff)))
+    #image2 = cv2.resize(cv2.imread("images/art/illum1/view2.png", 0), (round(278*coeff), round(222*coeff)))
+    #disp = occulation(image1, image2, interval, dx, methode)
     #image_depth = map(disp, disp.min(), disp.max(), 0, 255)
-    cv2.imwrite("1.png", disp)
+    #cv2.imwrite("1.png", disp)
